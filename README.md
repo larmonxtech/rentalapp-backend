@@ -2,9 +2,9 @@
 
 Si su IDE no incluye un generator para Spring Boot use [Spring Initializr](https://start.spring.io/)
 
-Backend para la aplicación web de citas médixas, el frontend está desarrollado en Angular 21.
+Backend para la aplicación web de Alquiler de Maquinaria, el frontend está desarrollado en Angular 21.
 
-Este proyecto es desarrollado como parte del curso Soluciones Web y Aplicaciones Distribuidas con NRC 3421, correspondiente al período UPN 2025-2
+Este proyecto es desarrollado como parte del curso Soluciones Web y Aplicaciones Distribuidas con NRC 5206, correspondiente al período UPN 2026-1
 
 - ARQUITECTURA: n-capas
 
