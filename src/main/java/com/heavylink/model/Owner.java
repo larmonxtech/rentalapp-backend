@@ -27,8 +27,15 @@ public class Owner {
     @Column(nullable = false, length = 15)
     private String document_number;
 
+    @Column(nullable = false, length = 100)
     private String fullname;
+
+    @Column(nullable = false, length = 20)
     private String phone;
+
+    @Column(nullable = false, length = 60)
     private String email;
+
+    @Column(nullable = false)
     private String status;
 }
