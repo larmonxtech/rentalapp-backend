@@ -53,6 +53,8 @@ y en el archivo application.properties agregue la cadena de conexión:
     
     # Database connection
     spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+    # Desde Spring Boot 3.1
+    spring.jpa.database-platform=org.hibernate.dialect.MySQLDialect
     spring.datasource.url=jdbc:mysql://localhost:3306/rentalappdb
     spring.datasource.username=your_user
     spring.datasource.password=your_password
@@ -60,12 +62,25 @@ y en el archivo application.properties agregue la cadena de conexión:
 
 #### PostgreSQL
 
-Para una conexión a postgresql considere la siguiente configuración en pom.xml
+Para una conexión a postgresql considere la siguiente configuración en `pom.xml`
+
 ```
     <dependency>
         <groupId>org.postgresql</groupId>
         <artifactId>postgresql</artifactId>
         <scope>runtime</scope>
+    </dependency>
+ ```
+
+o tambien opte por
+    
+ ```
+    <!-- Source: https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+    <dependency>
+        <groupId>org.postgresql</groupId>
+        <artifactId>postgresql</artifactId>
+        <version>42.7.10</version>
+        <scope>compile</scope>
     </dependency>
 ```
 Y la configuración de `application.properties`
@@ -86,8 +101,10 @@ Y la configuración de `application.properties`
 En la mayoría de los casos, no es necesario incluir esta propiedad `spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect`. Hibernate 6 puede deducir el dialecto correcto basándose exclusivamente en la spring.datasource.url
 
 #### MariaDB
-Opte por usar la configuración de MariaDB si es que la configuración de MySQL le genera error, estos errores se debe debido a actualizaciones recientes de MySQL
-Para una conexión a postgresql considere la siguiente configuración en pom.xml
+
+Opte por usar la configuración de MariaDB si es que la configuración de MySQL le genera error, estos errores se deben a actualizaciones recientes de MySQL
+Para una conexión a MariaDB considere la siguiente configuración en `pom.xml`
+
 ```
     <!-- Source: https://mvnrepository.com/artifact/org.mariadb.jdbc/mariadb-java-client -->
         <dependency>
